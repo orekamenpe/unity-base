@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Simple script that rotates the gameObject in the Y axis
+
 public class RotateTo : MonoBehaviour {
 
     private Transform thisTransform = null;

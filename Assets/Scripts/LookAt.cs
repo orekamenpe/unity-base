@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Make the gameObject look at a target
+// 2 methods:
+// - RotateTowardsWithDamp (with smooth rotation)
+// - RotateTowards (more mechanic)
+
+
 public class LookAt : MonoBehaviour {
 
     private Transform thisTransform = null;
@@ -9,6 +15,7 @@ public class LookAt : MonoBehaviour {
     public Transform target = null;
 
     public float Damping = 55.0f;
+	public bool isDamping = false;
 
     // Use this for initialization
     void Awake()
@@ -19,7 +26,14 @@ public class LookAt : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        RotateTowardsWithDamp();
+		if (isDamping) 
+		{
+			RotateTowardsWithDamp ();
+		} 
+		else 
+		{
+			RotteTowards ();
+		}
     }
 
     void RotteTowards()

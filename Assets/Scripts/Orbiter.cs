@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 
+// Orbit around a target (pivot)
+
 public class Orbiter : MonoBehaviour {
 
     public Transform pivot = null;
@@ -28,6 +30,7 @@ public class Orbiter : MonoBehaviour {
         rotX += Vert * Time.deltaTime * rotSpeed;
         rotY -= Horz * Time.deltaTime * rotSpeed;
 
+		// Apply Y rotation on X rotation YRot * XRot = destRot
         Quaternion YRot = Quaternion.Euler(0f, rotY, 0f);
         destRot = YRot * Quaternion.Euler(rotX, 0f, 0f);
 

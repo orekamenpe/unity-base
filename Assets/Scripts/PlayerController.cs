@@ -2,6 +2,10 @@
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 
+// PlayerController with CharacterController
+// - Can Jump
+
+[RequireComponent (typeof (CharacterController))]
 public class PlayerController : MonoBehaviour {
 
     private Transform thisTransform = null;
@@ -24,7 +28,7 @@ public class PlayerController : MonoBehaviour {
         chrController = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
+    // Using FixedUpdate for physics issues
     void FixedUpdate()
     {
         InputMovement();
@@ -67,7 +71,6 @@ public class PlayerController : MonoBehaviour {
             distanceToGround = hit.distance;
         }
 
-        Debug.Log("Distance to ground: " + distanceToGround);
         return distanceToGround;
     }
 }

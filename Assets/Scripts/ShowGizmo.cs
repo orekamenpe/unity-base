@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Draws a wireSphere around the gameObject and a line pointing forward
+// Posibility to draw an icon image: shold be on Assets/Gizmos folder
+
 public class ShowGizmo : MonoBehaviour
 {
     public bool ShowGizmos = true;
@@ -9,7 +12,6 @@ public class ShowGizmo : MonoBehaviour
 
     [Range(0f, 100f)]
     public float Range = 10f;
-
 
     void OnDrawGizmos ()
     {
@@ -25,6 +27,5 @@ public class ShowGizmo : MonoBehaviour
 
         Gizmos.color = Color.blue;
         Gizmos.DrawLine(transform.position, transform.position + transform.forward * Range);
-
 	}
 }

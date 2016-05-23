@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Simple script moving a rigid body forward with a speed
+
+[RequireComponent (typeof (Rigidbody))]
 public class Mover : MonoBehaviour
 {
     public float MaxSpeed = 1f;
